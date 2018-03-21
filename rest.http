@@ -1,0 +1,7 @@
+# GET a default number
+GET http://localhost:3000/increment-number
+Content-Type: application/json
+
+# GET the number sent incremented by one
+GET http://localhost:3000/increment-number?number=123
+Content-Type: application/json
