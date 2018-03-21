@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "artillery run sequential.yml"
   },
   "keywords": [
     "artillery"
@@ -16,6 +16,7 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
+    "artillery": "^1.6.0-14",
     "nodemon": "^1.17.2"
   }
 }

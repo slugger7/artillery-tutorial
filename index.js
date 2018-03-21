@@ -5,6 +5,7 @@ const port = 3000;
 
 app.get('/increment-number', (req, res) => {
   let data;
+  
   if (req.query.number) {
     console.log('We got a number', req.query.number);
     data = {
@@ -13,13 +14,12 @@ app.get('/increment-number', (req, res) => {
   } else {
     console.log('No number, returning default');
     data = {
-      number: 0
+      number: 1
     };
   }
 
   console.log('The data to return is ', data);
-
-  res.json(data);
+  setTimeout(() => res.json(data), 500); // this is to simulate some time consuming task like a db call
 });
 
 app.listen(port, () => console.log(`App is running on port ${port}`));

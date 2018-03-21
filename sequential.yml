@@ -1,0 +1,19 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 10
+      arrivalRate: 1
+scenarios:
+  - flow:
+      - get:
+          url: "/increment-number"
+          capture:
+            json: "$.number"
+            as: "number"
+      - loop:
+        - get:
+            url: "/increment-number?number={{ number }}"
+            capture:
+              json: "$.number"
+              as: "number"
+        count: 100
